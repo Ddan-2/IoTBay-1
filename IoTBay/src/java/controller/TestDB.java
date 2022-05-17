@@ -20,32 +20,30 @@ public class TestDB {
             Connection conn = connector.openConnection();
             DBManager db = new DBManager(conn);
             System.out.println("Start");
-             System.out.println("User name: ");
-
+            System.out.println("Card Owner Name: ");
             String name = in.nextLine();
 
-            System.out.println("User address: ");
+            System.out.println("Card Number: ");
 
-            String address = in.nextLine();
+            String cardNumber = in.nextLine();
 
-            System.out.println("User phone: ");
+            System.out.println("PCard Expiry Date: ");
 
-            String phone = in.nextLine();
+            String expiryDate = in.nextLine();
 
-            System.out.println("User dob: ");
+            System.out.println("Card CVV: ");
+            String cvv = in.nextLine();
 
-            String dob = in.nextLine();
+            System.out.println("Email: ");
+            String userEmail = in.nextLine();
 
-            System.out.println("User email: ");
+            
 
-            String email = in.nextLine();
-            System.out.println("User password: ");
-
-            String password = in.nextLine();
+            
 //NAME, ADDRESS, PHONE, DOB, EMAIL, PASSWORD"
 
-            db.addUser(name, address, phone, dob, email, password);
-            System.out.println("User is added to the database.");
+            db.addPayment(name, cardNumber, expiryDate, cvv, userEmail);
+            System.out.println("Payment Dateil is added to the database.");
 
             connector.closeConnection();
 

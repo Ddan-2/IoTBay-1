@@ -34,8 +34,26 @@ public class DBManager {
             if (userEmail.equals(email) && userPass.equals(password)) {
                 String userName = rs.getString(2);
                 String userDOB = rs.getString(5);
-                String userPhone = rs.getString(4); 
+                String userPhone = rs.getString(4);
                 String userAddr = rs.getString(3);
+                return new User(userName, userAddr, userPhone, userDOB, userEmail, userPass);
+            }
+        }
+        return null;
+    }
+
+    public User findUser(String email) throws SQLException {
+        String s = "SELECT * FROM IOTADMIN.Users where EMAIL = '" + email + "'";
+        ResultSet rs = statement.executeQuery(s);
+        while (rs.next()) {
+            System.out.println("looking for user");
+            String userEmail = rs.getString(6);
+            if (userEmail.equals(email)) {
+                String userName = rs.getString(2);
+                String userDOB = rs.getString(5);
+                String userPhone = rs.getString(4);
+                String userAddr = rs.getString(3);
+                String userPass = rs.getString(7);
                 return new User(userName, userAddr, userPhone, userDOB, userEmail, userPass);
             }
         }
@@ -57,5 +75,10 @@ public class DBManager {
     public void deleteUser(String email) throws SQLException {
         //code for delete-operation   
 
+    }
+//add orderID ***
+
+    public void addPayment(String name, String cardNumber, String expiryDate, String cvv, String userEmail) throws SQLException {
+        statement.executeUpdate("INSERT INTO iotadmin.Cardinfo (NAME, CARDNUMBER, EXPIRYDATE, CVV, USEREMAIL)" + "VALUES('" + name + "', '" + cardNumber + "', '" + expiryDate + "', '" + cvv + "', '" + userEmail + "')");
     }
 }

@@ -1,0 +1,83 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17/05/2022, 4:37:18 PM
+    Author     : alleria
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+html, body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+#top-bar{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#logo{
+  width:240px;
+  height:100px;
+}
+
+#form-headings{
+  text-align: center;
+}
+
+#form-container{
+  padding: 1%;
+}
+
+#top-form-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+}
+
+.half-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#bottom-form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+
+input{
+  margin-bottom: 10px;
+  font-family: inherit;
+  width: 50%;
+  height:30px;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+#submit{
+  width: 200px;
+  height:50px;
+  background-color: #03bafc;
+  border: none;
+  color: white;
+  border-radius: 25px;
+}
+
+footer{
+  margin-top: 1%;
+  border-top: 1px solid #000000;
+  padding: 2% 0 2% 0;
+  text-align: end;
+}
